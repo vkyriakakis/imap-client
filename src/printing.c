@@ -48,17 +48,17 @@ void printStat(msgCacheT *cachePtr) {
 
 void printHelp(void) {
 	printf("Commands:\n");
-	printf("\t!delete <num> - Marks the message with message number <num> for deletion.\n");
-	printf("\t!undelete <num> - Unmarks the marked for deletion message <num>. If not marked, it does nothing.\n");
-	printf("\t!expunge - Deletes all messages that are marked for deletion.\n");
-	printf("\t!read <num> - Display the message with number <num>.\n");
-	printf("\t!page <num> - Display all the messages on the page numbered <num>.\n");
-	printf("\t!logout - Close the connection with the server, and close the program.\n");
-	printf("\t!select <mailbox-name> - Select the mailbox named <mailbox-name>.\n");
-	printf("\t!list - List mailbox names (not recursively).\n");
-	printf("\t!stats - Display information about the mailbox.\n");
-	printf("\t!clear - Clear the screen.\n");
-	printf("\t!help - You are here.\n\n");
+	printf("\tdelete <num> - Marks the message with message number <num> for deletion.\n");
+	printf("\tundelete <num> - Unmarks the marked for deletion message <num>. If not marked, it does nothing.\n");
+	printf("\texpunge - Deletes all messages that are marked for deletion.\n");
+	printf("\tread <num> - Display the message with number <num>.\n");
+	printf("\tpage <num> - Display all the messages on the page numbered <num>.\n");
+	printf("\tlogout - Close the connection with the server, and close the program.\n");
+	printf("\tselect <mailbox-name> - Select the mailbox named <mailbox-name>.\n");
+	printf("\tlist - List mailbox names (not recursively).\n");
+	printf("\tstats - Display information about the mailbox.\n");
+	printf("\tclear - Clear the screen.\n");
+	printf("\thelp - You are here.\n\n");
 }
 
 void printMsgContents(msgT *msgPtr) {
