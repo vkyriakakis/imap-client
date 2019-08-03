@@ -270,7 +270,7 @@ int handleUserInput(FILE *imapStream, msgCacheT *cachePtr) {
 	sprintf(commandFormat, "%%%ds", MAX_LINE-1);
 
 	scanf(commandFormat, command); //Get command, and depending on the command, get the other arguements
-	if (!strcmp(command, "!delete")) {
+	if (!strcmp(command, "delete")) {
 		int msgNum; 
 
 		/* Get msgNum, note that this is the number that the user sees, 
@@ -282,7 +282,7 @@ int handleUserInput(FILE *imapStream, msgCacheT *cachePtr) {
 			return(retVal);
 		}
 	}
-	else if (!strcmp(command, "!undelete")) {
+	else if (!strcmp(command, "undelete")) {
 		int msgNum;
 
 		scanf("%d", &msgNum); 
@@ -291,13 +291,13 @@ int handleUserInput(FILE *imapStream, msgCacheT *cachePtr) {
 			return(retVal);
 		}
 	}
-	else if (!strcmp(command, "!expunge")) {
+	else if (!strcmp(command, "expunge")) {
 		retVal = sendExpunge(imapStream, cachePtr);
 		if (isError(retVal)) {
 			return(retVal);
 		}
 	}
-	else if (!strcmp(command, "!read")) {
+	else if (!strcmp(command, "read")) {
 		int msgNum;
 
 		scanf("%d", &msgNum);
@@ -306,39 +306,39 @@ int handleUserInput(FILE *imapStream, msgCacheT *cachePtr) {
 			return(retVal);
 		}
 	}
-	else if (!strcmp(command, "!page")) {
+	else if (!strcmp(command, "page")) {
 		int pageNum;
 
 		//Get pageNum, as the user sees it
 		scanf("%d", &pageNum);
 		displayMsgPage(imapStream, cachePtr, pageNum);
 	}
-	else if (!strcmp(command, "!logout")) {
+	else if (!strcmp(command, "logout")) {
 		return(QUIT);
 	}
-	else if (!strcmp(command, "!select")) {
+	else if (!strcmp(command, "select")) {
 		retVal = userSelectMailbox(imapStream, cachePtr);
 		if (isError(retVal)) {
 			return(retVal);
 		}
 	}
-	else if (!strcmp(command, "!list")) {
+	else if (!strcmp(command, "list")) {
 		retVal = listMailboxNames(imapStream, cachePtr);
 		if (isError(retVal)) {
 			return(retVal);
 		}
 	}
-	else if (!strcmp(command, "!stats")) {
+	else if (!strcmp(command, "stats")) {
 		printStat(cachePtr);
 	}
-	else if (!strcmp(command, "!clear")) {
+	else if (!strcmp(command, "clear")) {
 		clearScreen();
 	}
-	else if (!strcmp(command, "!help")) {
+	else if (!strcmp(command, "help")) {
 		printHelp();
 	}
 	else { //If the command is not recognized, it is considered invalid and nothing happens
-		printf("Invalid command. Try \"!help\" for a list of the supported commands.\n");
+		printf("Invalid command. Try \"help\" for a list of the supported commands.\n");
 	}
 
 	return(SUCCESS);
