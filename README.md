@@ -96,6 +96,3 @@ If you only want to use the program, feel free to stop here.
 
  + The dynamic arrays used in certain parts of the program are resized by a fixed quantity when they
   become full. Doubling the size would be more efficient.
-
- + The program is a mess dependency-wise, some files contain functions that refer to types defined
-  in other files, confusing the reader.
